@@ -50,11 +50,25 @@ void drawDiameter(){
 	glVertex2i(x_center+radius,y_center);//end of diameter
 	glEnd();
 }
+void DrawAxix(){
+	glColor3f(0.0,0.0,0.0);
+	glBegin(GL_LINES);
+	glVertex2i(-width,0);
+	glVertex2i(width,0);
+	glEnd();
+
+	glColor3f(0.0,0.0,0.0);
+	glBegin(GL_LINES);
+	glVertex2i(0,-height/2);
+	glVertex2i(0,height/2);
+	glEnd();
+}
 void display(){
 	glClear(GL_COLOR_BUFFER_BIT);
 	glColor4f(1.0,0.0,0.0,1.0);
 	midPointCircleDraw();
 	drawDiameter();
+	DrawAxix();
 	glFlush();
 }
 // CALLED once to perform initialization tasks
