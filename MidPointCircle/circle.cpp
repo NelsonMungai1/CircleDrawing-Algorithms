@@ -3,8 +3,8 @@
 # include <GL/glut.h>
 #include<cmath>
 
-const int width=100;
-const int height=100;
+const int width=400;
+const int height=300;
 int radius=4;
 int x_center=3;
 int y_center=3;
@@ -42,10 +42,19 @@ void midPointCircleDraw(){
 	}
 	glEnd();
 }
+// method to draw the diameter
+void drawDiameter(){
+	glColor3f(0,0,0);//color set to black
+	glBegin(GL_LINES);
+	glVertex2i(x_center-radius,y_center);//starting of the diameter
+	glVertex2i(x_center+radius,y_center);//end of diameter
+	glEnd();
+}
 void display(){
 	glClear(GL_COLOR_BUFFER_BIT);
 	glColor4f(1.0,0.0,0.0,1.0);
 	midPointCircleDraw();
+	drawDiameter();
 	glFlush();
 }
 // CALLED once to perform initialization tasks
